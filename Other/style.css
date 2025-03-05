@@ -1,0 +1,149 @@
+/* style.css */
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #333;
+    font-size: 20px;
+  }
+  
+  header {
+    background: linear-gradient(135deg, #ffe4e1, #fff);
+    color: #d6336c;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+  }
+  
+  header .logo {
+    font-size: 3em;
+    font-weight: bold;
+  }
+  
+  header .design {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 1.8em;
+    opacity: 0.8;
+  }
+  
+  nav {
+    background: #ffd1dc;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline;
+    margin: 0 20px;
+  }
+  
+  nav a {
+    color: #d6336c;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+  
+  main {
+    padding: 40px;
+  }
+  
+  section {
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  section h2 {
+    background: linear-gradient(90deg, #ffd1dc, #fff);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+  }
+  
+  section p {
+    line-height: 1.5;
+    font-size: 1.4em;
+    white-space: pre-wrap;
+  }
+  
+  /* タイプ詳細ボックス */
+  .type-detail {
+    display: flex;
+    align-items: center;
+    background: #fff0f5;
+    border: 2px solid #ffd1dc;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+  }
+  
+  .type-detail.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .type-image {
+    flex: 0 0 120px;
+    margin-right: 20px;
+    text-align: center;
+  }
+  
+  .type-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .type-text {
+    flex: 1;
+  }
+  
+  .type-text h3 {
+    font-size: 2em;
+    color: #d6336c;
+    margin-bottom: 10px;
+  }
+  
+  /* フッター */
+  footer {
+    background: #ffe4e1;
+    color: #d6336c;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.5em;
+  }
+  
+  /* スマホなどの小さな画面向けレスポンシブ調整 */
+  @media (max-width: 768px) {
+    .type-detail {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .type-image {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+  }
+  
