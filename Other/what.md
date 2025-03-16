@@ -36,3 +36,104 @@ THPJ診断では、従来の性格検査の限界を克服するため、4つの
 
 以上の4つの評価軸は、互いに補完し合いながら、個々の性格の多面的な側面をダブりなく、かつ網羅的に把握することを可能にしています。THPJ診断は、これらの軸を用いることで、従来の性格検査では捉えきれなかった個々の本質に迫り、正確かつ信頼性の高い診断結果を提供いたします。
 
+
+<h3>【ESTJ】</h3>
+ESTPの人は刺激性が強く、自ら率先して行動を起こし、現実的な情報収集、論理的判断と秩序ある行動をとるリーダータイプ。現場での迅速な問題解決に優れ、組織を整えるリーダーとして活躍します。
+<h3>【ESTP】</h3>
+刺激性と実践力に優れ、現場で即断即決する行動派。柔軟な対応で突発的な問題にも迅速に対処する。</p>
+<h3>【ESFJ】</h3>
+          <p>人とのコミュニケーションを大切にし、具体的な情報に基づいた妥当な判断で調和を重んじる。コミュニティでの調整役に長ける。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ESFP】</h3>
+          <p>明るく社交的で、感情に寄り添った判断を行いながら、自由な発想と柔軟な行動で場を盛り上げるムードメーカー。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ENTJ】</h3>
+          <p>刺激性と推論力を武器に、戦略的かつ計画的に組織の変革を推進するリーダー。論理性と秩序を重視する。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ENTP】</h3>
+          <p>革新的なアイディアと柔軟な思考で新たな可能性を模索する創造的なタイプ。論理性と自由な発想を併せ持つ。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ENFJ】</h3>
+          <p>人を巻き込み、直感と妥当性に基づいた判断でチームをまとめる指導者。明確なビジョンと計画で周囲に影響を与える。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ENFP】</h3>
+          <p>情熱的で創造性にあふれ、直感を活かして未来の可能性を追求するタイプ。感情に寄り添い、自由な発想で新たな価値を創造する。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ISTJ】</h3>
+          <p>誘発性を持ちながら、現実的なデータと事実を重んじる堅実なタイプ。計画と秩序を大切にし、信頼性の高い結果を出す。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ISTP】</h3>
+          <p>実践的な判断と柔軟な対応力を持ち、現場での迅速な問題解決に優れるタイプ。論理性と自由な発想が特徴。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ISFJ】</h3>
+          <p>温かみのある対応と細部までの配慮を特徴とし、実情に即した妥当な判断を下す。伝統と秩序を守りながら安心感を提供する。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【ISFP】</h3>
+          <p>芸術的な感性と独自の表現力を持ち、内面的な感受性を大切にするタイプ。柔軟な判断と自由な発想で自己実現を追求する。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【INTJ】</h3>
+          <p>内省と推論を通じた戦略的思考により、論理性と秩序ある計画で未来を切り拓くタイプ。長期的なビジョンを持つ。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【INTP】</h3>
+          <p>革新的なアイディアと徹底した論理分析により、複雑な問題を解決する知的タイプ。柔軟なアプローチで新たな発見を促す。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【INFJ】</h3>
+          <p>深い洞察力と直感を活かし、人間関係や未来の可能性を見極めるタイプ。妥当性を重んじ、調和ある環境作りに寄与する。</p>
+        </div>
+      </div>
+      
+      <div class="type-detail fade-box">
+        <div class="type-text">
+          <h3>【INFP】</h3>
+          <p>理想と感受性を大切にし、内面的なビジョンに従って自己表現を行うタイプ。柔軟で自由な発想が特徴となる。</p>
+        </div>
+      </div>
+    </section>

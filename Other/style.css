@@ -126,11 +126,31 @@ body {
   }
   
   .type-text h3 {
-    font-size: 2em;
+    font-size: 1.7em;
     color: #d6336c;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
-  
+  /* CTAボタン */
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background: #d6336c;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8em;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #b2225d;
+}
+
   /* フッター */
   footer {
     background: #ffe4e1;
