@@ -21,6 +21,11 @@ body {
     font-size: 3em;
     font-weight: bold;
   }
+
+  .logo img {
+    height: 1.2em; /* テキストの高さに合わせる */
+    vertical-align: middle; /* テキストと揃える */
+  }
   
   header .design {
     position: absolute;

@@ -1,8 +1,15 @@
+<!-- 本ページはEnd of My Lilithによる東方project二次創作小説、「縺、時々『私』」の一部です。実在の団体等とは一切関係ありません -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="auther" content="れう すずらぎ">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="THPJ診断とは？"/>
+  <meta name="twitter:description" content="日本THPJ協会公式サイト"/>
+  <meta name="twitter:image" content="logo.png">
+  
   <title>日本THPJ協会 | THPJ診断</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -16,7 +23,7 @@
       <li><a href="#features">診断の特徴</a></li>
       <li><a href="#axes">診断軸</a></li>
       <li><a href="#types">16タイプの詳細</a></li>
-      <li><a href="#flow">THPJ診断の背景と今後の展望</a></li>
+      <li><a href="#flow">診断する</a></li>
     </ul>
   </nav>
   <main>
@@ -44,6 +51,10 @@
       <p>
         　従来の性格検査は、専門の訓練を受けた有資格者による支援が必要であったため、自己洞察を行う上で敷居が高いとされていました。THPJ診断は、シンプルな質問への回答のみで実施可能な設計となっており、誰でも直感的に自己評価を行うことができます。この手軽さは、幅広い層の方々が自己理解を深め、日常生活における自己改善やキャリア形成の参考とする上で大きな利点となっています。
       </p>
+      <h3>独特な問題</h3>
+      <p>
+        　性格検査は一般的に、多数の質問に回答する必要があり、被験者に負担が大きいという課題がありました。そこで本検査では、少しでも楽しく取り組めるよう、ユニークな質問を多数取り入れております。たとえば、「もし魔法が使えたら、何よりもパワーを重視する」「不老不死の薬が手に入ったら、迷わず飲むだろう」といった、回答者が飽きることなくリラックスした気持ちで検査に臨める工夫がなされています。こうした設計により、従来の性格検査に見られる堅苦しさを排し、より直感的かつ本質的な性格把握を可能にしています。
+      </p>
       <h3>利用シーンの拡大</h3>
       <p>
         　THPJ診断は、その科学的根拠と高い信頼性から、世界各国で個人の趣味や娯楽の枠を超えた、幅広い分野での活用が進んでおります。近年では、医学分野においても、患者の心理状態の把握やストレスマネジメント、治療方針の策定に役立つツールとして応用されており、また政治分野においては、国民の性格傾向を踏まえた政策立案や公共サービスの改善など、制度設計への導入が検討され始めています。さらに今後、教育現場での個別指導の最適化や地域コミュニティの活性化、さらには先端技術との連携による個々人に最適化されたライフスタイルサポートなど、従来の枠を超えた多岐にわたる応用が計画されています。THPJ診断は今後も公私ともに利用者の多様なシーンにおける自己成長と意思決定の支援に寄与することでしょう。
@@ -52,7 +63,7 @@
 
     <!-- 診断軸 -->
     <section id="axes" class="fade-section">
-      <h2>評価軸</h2>
+      <h2>診断軸</h2>
       <p>
         　THPJ診断では、従来の性格検査の限界を克服するため、4つの独自評価軸を設定しています。各軸は、単なる一面的な特徴の有無ではなく、状況に応じた反応や意思決定のプロセスを精密に測定するために設計されており、以下のように分類されます。
       </p>
@@ -76,7 +87,7 @@
 
     <!-- 16タイプの詳細 -->
     <section id="types" class="fade-section">
-      <h2>16タイプの詳細な特徴</h2>
+      <h2>16タイプの詳細</h2>
       
       <div class="type-detail fade-box">
         <div class="type-text">
@@ -194,7 +205,7 @@
 
     <!-- 診断の流れ -->
     <section id="flow" class="fade-section">
-      <h2>THPJ診断の背景と今後の展望</h2>
+      <h2>診断する</h2>
       <p>
         　THPJ診断は、従来の性格検査の限界を克服し、より多角的かつ実践的なアプローチを追求する中で開発されました。アルズニエル博士は、個々人の内面に存在する多様な側面を浮き彫りにすることで、より実生活に即した自己理解を促進することを目指しました。日本THPJ協会は、今後も最新の研究成果を反映しながら、検査手法の改良・普及に努め、皆様が自己理解を深め、健全な人間関係やキャリア形成に役立てるための支援を続けてまいります。
         　診断は今すぐ行うことができます。あなたも自分の性格の傾向を確認し、人生の有意義な指針としましょう！
@@ -215,7 +226,7 @@
     document.addEventListener('DOMContentLoaded', function(){
       const fadeSections = document.querySelectorAll('.fade-section');
       const fadeBoxes = document.querySelectorAll('.fade-box');
-      const options = { threshold: 0.2 };
+      const options = { threshold: 0 };
       const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
           if(entry.isIntersecting) {
