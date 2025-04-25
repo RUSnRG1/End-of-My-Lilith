@@ -1,13 +1,13 @@
 // ブログデータ（仮のデータ構造）
 const blogData = [
     // 上に追加していく
-    { title: "社会人生活1年、サークル参加8回", path: "Blog/source/2025-03-30/text.md" },
-    { title: "冬コミ　新刊告知", path: "Blog/source/2024-12-21/text.md" },
-    { title: "『春怨』の補足：モブについて", path: "Blog/source/2024-11-18/text.md" },
-    { title: "世はまさに、大個人サイト時代！", path: "Blog/source/2024-11-17/text.md" },
-    { title: "社会人生活7ヵ月、サークル参加6回", path: "Blog/source/2024-11-08/text.md" },
-    { title: "投稿テスト", path: "Blog/source/2024-11-04/text.md" },
-    { title: " ", path: "Blog/source/2024-11-16/text.md" },
+    { title: "社会人生活1年、サークル参加8回", path: "Blog/source/2025-03-30/text.md", date:"2025-03-30" },
+    { title: "冬コミ　新刊告知", path: "Blog/source/2024-12-21/text.md", date:"2024-12-21" },
+    { title: "『春怨』の補足：モブについて", path: "Blog/source/2024-11-18/text.md", date:"2024-11-18" },
+    { title: "世はまさに、大個人サイト時代！", path: "Blog/source/2024-11-17/text.md", date:"2024-11-17" },
+    { title: "社会人生活7ヵ月、サークル参加6回", path: "Blog/source/2024-11-08/text.md", date:"2024-11-08" },
+    { title: "投稿テスト", path: "Blog/source/2024-11-04/text.md", date:"2024-11-04" },
+    { title: " ", path: "Blog/source/2024-11-16/text.md", date:"XXXX-XX-XX" },
 ];
 
 const blogsPerPage = 6;
@@ -32,7 +32,8 @@ function loadBlogList(page) {
                 const excerpt = markdown.split("\n").slice(0, 3).join(" ");
                 return `
                     <div class="blog-thumbnail">
-                        <h2>${blog.title}</h2>
+                        <h2 style="margin-bottom: -1.7em">${blog.title}</h2>
+                        <p style="text-align: right">${blog.date}</p>
                         <p>${excerpt}...</p>
                         <a href="Blog/template.html?path=${blog.path}&title=${encodeURIComponent(blog.title)}">続きを読む</a>
                     </div>

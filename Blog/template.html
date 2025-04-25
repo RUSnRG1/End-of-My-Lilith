@@ -43,7 +43,7 @@
                     <div class="blog_text">
                         <!-- タイトル -->
                         <h1 id="blog-title"></h1>
-
+                        <p style="text-align: right" id="blog-date"></p>
                         <!-- 区切り線（将来的に画像に置き換えられる） -->
                         <div class="separator"></div>
 
@@ -93,9 +93,11 @@
             const urlParams = new URLSearchParams(window.location.search);
             const blogPath = urlParams.get('path');
             const blogTitle = urlParams.get('title');
+            const blogDate = urlParams.get('date');
             // タイトルをページ内にセット
             document.getElementById("page-title").textContent = blogTitle || "ブログ記事";
             document.getElementById("blog-title").textContent = blogTitle || "ブログ記事";
+            document.getElementById("blog-date").textContent = blogDate || "月日";
 
             const twitterTitleMeta = document.getElementById('twitter-title');
             twitterTitleMeta.setAttribute('content', blogTitle);
