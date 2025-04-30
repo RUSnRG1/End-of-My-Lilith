@@ -1,13 +1,13 @@
 // ブログデータ（仮のデータ構造）
 const blogData = [
     // 上に追加していく
-    { title: "社会人生活1年、サークル参加8回", path: "Blog/source/2025-03-30/text.md", date:"2025-03-30" },
-    { title: "冬コミ　新刊告知", path: "Blog/source/2024-12-21/text.md", date:"2024-12-21" },
-    { title: "『春怨』の補足：モブについて", path: "Blog/source/2024-11-18/text.md", date:"2024-11-18" },
-    { title: "世はまさに、大個人サイト時代！", path: "Blog/source/2024-11-17/text.md", date:"2024-11-17" },
-    { title: "社会人生活7ヵ月、サークル参加6回", path: "Blog/source/2024-11-08/text.md", date:"2024-11-08" },
-    { title: "投稿テスト", path: "Blog/source/2024-11-04/text.md", date:"2024-11-04" },
-    { title: " ", path: "Blog/source/2024-11-16/text.md", date:"XXXX-XX-XX" },
+    { title: "社会人生活1年、サークル参加8回", date:"2025-03-30" },
+    { title: "冬コミ　新刊告知", date:"2024-12-21" },
+    { title: "『春怨』の補足：モブについて", date:"2024-11-18" },
+    { title: "世はまさに、大個人サイト時代！", date:"2024-11-17" },
+    { title: "社会人生活7ヵ月、サークル参加6回", date:"2024-11-08" },
+    { title: "投稿テスト", date:"2024-11-04" },
+    { title: " ", date:"XXXX-XX-XX" },//11-16
 ];
 
 const blogsPerPage = 6;
@@ -25,8 +25,9 @@ function loadBlogList(page) {
     const blogListContainer = document.getElementById("blog-list");
     blogListContainer.innerHTML = ""; // 一旦クリア
 
-    const fetchPromises = blogsToDisplay.map(blog => 
-        fetch(blog.path)
+    const fetchPromises = blogsToDisplay.map(blog =>{
+        const blog_path = `Blog/source/${blog.date}/text.md`;
+        return fetch(blog_path)
             .then(response => response.text())
             .then(markdown => {
                 const excerpt = markdown.split("\n").slice(0, 3).join(" ");
@@ -35,7 +36,7 @@ function loadBlogList(page) {
                         <h2 style="margin-bottom: -1.7em">${blog.title}</h2>
                         <p style="text-align: right">${blog.date}</p>
                         <p>${excerpt}...</p>
-                        <a href="Blog/template.html?path=${blog.path}&title=${encodeURIComponent(blog.title)}">続きを読む</a>
+                        <a href="Blog/template.html?path=${blog_path}&title=${encodeURIComponent(blog.title)}&date=${blog.date}">続きを読む</a>
                     </div>
                 `;
             })
@@ -48,7 +49,7 @@ function loadBlogList(page) {
                     </div>
                 `;
             })
-    );
+        });
 
     // Promise.all ですべての処理を待機し、順序を維持
     Promise.all(fetchPromises).then(blogHTMLs => {
