@@ -91,13 +91,14 @@
                 breaks : true,
             });
             const urlParams = new URLSearchParams(window.location.search);
+            console.log(urlParams)
             const blogPath = urlParams.get('path');
             const blogTitle = urlParams.get('title');
             const blogDate = urlParams.get('date');
             // タイトルをページ内にセット
             document.getElementById("page-title").textContent = blogTitle || "ブログ記事";
             document.getElementById("blog-title").textContent = blogTitle || "ブログ記事";
-            document.getElementById("blog-date").textContent = blogDate || "2025-03-30";
+            document.getElementById("blog-date").textContent = blogDate || "１月日";
 
             const twitterTitleMeta = document.getElementById('twitter-title');
             twitterTitleMeta.setAttribute('content', blogTitle);
