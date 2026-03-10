@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Build outputs
+/build/
+/dist/
+/out/
+/.next/
+/coverage/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+*.log
+
+# Minified / generated assets
+*.min.js
+*.map
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# Large binary artifacts
+*.zip
+*.sqlite
+
+# TeX intermediate files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.xdv

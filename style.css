@@ -209,7 +209,8 @@ footer .social-icons img {
 /*全体設計*/
 .blog_contents {
     display: grid;
-    grid-template-columns: 74% 2% 24%;
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
+    gap: 20px;
     width: 100%;
     box-sizing: border-box;
     align-items: start; /* 内容に応じて高さを自動調整 */
@@ -231,17 +232,40 @@ footer .social-icons img {
     box-sizing: border-box;
 }
 
-.blog-thumbnail h2 {
-    font-size: 1.2em;
-    color: #2ea3b2;
+.blog-thumbnail__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
 }
 
-.blog-thumbnail p {
+.blog-thumbnail__title {
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.4;
+    color: #2ea3b2;
+    flex: 1;
+}
+
+.blog-thumbnail__date {
+    margin: 0;
+    color: #74e9f9;
+    font-size: 0.85em;
+    white-space: nowrap;
+}
+
+.blog-thumbnail__excerpt {
+    margin: 0;
     color: #2ea3b2;
     font-size: 0.9em;
+    line-height: 1.8;
 }
 
-.blog-thumbnail a {
+.blog-thumbnail__link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 14px;
     color: #1e568d;
     text-decoration: none;
 }
@@ -306,7 +330,7 @@ footer .social-icons img {
     border: 2px solid #355265;
     text-align: center;
     box-sizing: border-box;
-    grid-column: 3 / 4; 
+    grid-column: 2 / 3; 
 }
 
 .blog_description img{
@@ -472,5 +496,65 @@ footer .social-icons img {
         margin: 0 auto ;
         box-sizing: border-box;
     }
+
+    body.blog-page #container {
+        margin: 16px;
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .blog_contents {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .blog-list,
+    .blog_text,
+    .pagination,
+    .blog_description {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+
+    .blog-thumbnail {
+        padding: 16px;
+    }
+
+    .blog-thumbnail__meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .blog-thumbnail__date {
+        white-space: normal;
+    }
+
+    .pagination {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .pagination button {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px 12px;
+    }
+
+    .blog_description {
+        padding: 16px;
+    }
+
+    #blog-title {
+        font-size: 1.6em;
+        line-height: 1.3;
+        text-align: left;
+    }
+
+    .blog_share {
+        flex-wrap: wrap;
+    }
 }
+
+
 

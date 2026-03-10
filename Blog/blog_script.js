@@ -9,11 +9,80 @@ const blogData = [
     { title: "世はまさに、大個人サイト時代！", date:"2024-11-17" },
     { title: "社会人生活7ヵ月、サークル参加6回", date:"2024-11-08" },
     { title: "投稿テスト", date:"2024-11-04" },
-    { title: " ", date:"XXXX-XX-XX" },
 ];
 
 const blogsPerPage = 6;
 let currentPage = 1;
+
+function escapeHtml(value = "") {
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+
+function normalizeBlogText(markdown) {
+    return markdown
+        .replace(/<!--[\s\S]*?-->/g, " ")
+        .replace(/<style[\s\S]*?<\/style>/gi, " ")
+        .replace(/<script[\s\S]*?<\/script>/gi, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/!\[([^\]]*)\]\([^\)]+\)/g, "$1")
+        .replace(/\[([^\]]+)\]\([^\)]+\)/g, "$1")
+        .replace(/^\s{0,3}#{1,6}\s+/gm, "")
+        .replace(/^\s{0,3}>\s?/gm, "")
+        .replace(/^\s*[-*+]\s+/gm, "")
+        .replace(/^\s*\d+\.\s+/gm, "")
+        .replace(/[`*_~]/g, "")
+        .replace(/\r?\n+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function createExcerpt(markdown, maxLength = 120) {
+    const plainText = normalizeBlogText(markdown);
+
+    if (!plainText) {
+        return "本文準備中です。";
+    }
+
+    if (plainText.length <= maxLength) {
+        return plainText;
+    }
+
+    return `${plainText.slice(0, maxLength).trim()}…`;
+}
+
+function getBlogTitle(blog) {
+    if (typeof blog.title === "string" && blog.title.trim() !== "") {
+        return blog.title.trim();
+    }
+
+    return `${blog.date}の記事`;
+}
+
+function createBlogCardHTML(blog, excerpt, hasError = false) {
+    const blogPath = `Blog/source/${blog.date}/text.md`;
+    const safeTitle = escapeHtml(getBlogTitle(blog));
+    const safeDate = escapeHtml(blog.date);
+    const safeExcerpt = escapeHtml(excerpt);
+    const readMoreHtml = hasError
+        ? ""
+        : `<a class="blog-thumbnail__link" href="Blog/template.html?path=${blogPath}&title=${encodeURIComponent(getBlogTitle(blog))}&date=${blog.date}">続きを読む</a>`;
+
+    return `
+        <article class="blog-thumbnail">
+            <div class="blog-thumbnail__meta">
+                <h2 class="blog-thumbnail__title">${safeTitle}</h2>
+                <p class="blog-thumbnail__date">${safeDate}</p>
+            </div>
+            <p class="blog-thumbnail__excerpt">${safeExcerpt}</p>
+            ${readMoreHtml}
+        </article>
+    `;
+}
 
 // ブログリストを読み込む
 function loadBlogList(page) {
@@ -30,34 +99,26 @@ function loadBlogList(page) {
     const fetchPromises = blogsToDisplay.map(blog =>{
         const blog_path = `Blog/source/${blog.date}/text.md`;
         return fetch(blog_path)
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${blog_path}`);
+                }
+
+                return response.text();
+            })
             .then(markdown => {
-                const excerpt = markdown.split("\n").slice(0, 3).join(" ");
-                return `
-                    <div class="blog-thumbnail">
-                        <h2 style="margin-bottom: -1.7em">${blog.title}</h2>
-                        <p style="text-align: right">${blog.date}</p>
-                        <p>${excerpt}...</p>
-                        <a href="Blog/template.html?path=${blog_path}&title=${encodeURIComponent(blog.title)}&date=${blog.date}">続きを読む</a>
-                    </div>
-                `;
+                const excerpt = createExcerpt(markdown);
+                return createBlogCardHTML(blog, excerpt);
             })
             .catch(error => {
                 console.error("Error loading blog:", error);
-                return `
-                    <div class="blog-thumbnail">
-                        <h2>${blog.title}</h2>
-                        <p>コンテンツを読み込めませんでした。</p>
-                    </div>
-                `;
+                return createBlogCardHTML(blog, "コンテンツを読み込めませんでした。", true);
             })
         });
 
     // Promise.all ですべての処理を待機し、順序を維持
     Promise.all(fetchPromises).then(blogHTMLs => {
-        blogHTMLs.forEach(blogHTML => {
-            blogListContainer.innerHTML += blogHTML;
-        });
+        blogListContainer.innerHTML = blogHTMLs.join("");
     });
 
     renderPagination();
@@ -115,14 +176,18 @@ async function loadMarkdown(markdownPath) {
     try {
         //getElementByIdで出力先を指定
     let exportMarkdown = document.getElementById("blog-text");
-    fetch(markdownPath, {
+    const response = await fetch(markdownPath, {
         method: "GET",
-    }).then(response => response.text())
-    .then(text => {
-        exportMarkdown.innerHTML = marked.parse(text);
-        // Markdownの読み込みが完了した後に共有リンクを生成
-        generateShareLinks();
     });
+
+    if (!response.ok) {
+        throw new Error(`Failed to load ${markdownPath}`);
+    }
+
+    const text = await response.text();
+    exportMarkdown.innerHTML = marked.parse(text);
+    // Markdownの読み込みが完了した後に共有リンクを生成
+    generateShareLinks();
     } catch (error) {
         console.error("Markdownファイルの読み込みに失敗しました:", error);
         document.getElementById("blog-text").innerHTML = "<p>コンテンツを読み込めませんでした。</p>";
@@ -148,8 +213,5 @@ function generateShareLinks() {
         if (blueskyShareLink) {
             blueskyShareLink.href = `https://bsky.app/intent/compose?text=${blogTitle}：End of My Lilithのブログ%0a${currentUrl}`;
         }
-
-        // href属性を設定
-        twitterShareLink.href = twitterUrl;
     }
 };
