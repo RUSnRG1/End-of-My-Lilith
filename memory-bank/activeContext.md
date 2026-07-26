@@ -10,6 +10,12 @@
   - Blog の2カラム表示を見直し、スマホでは1カラムに落ちるようにした。
   - タイトル行の負の margin をやめ、一覧カードの見出し/日付レイアウトを組み直した。
   - プレースホルダ記事 `XXXX-XX-XX` は一覧から除去済み。
+- BlogのSNSカードを記事別の静的HTMLで出す仕組みを追加。
+  - `Blog/blog_data.js` の任意 `image` でサムネイルを指定できる。
+  - 未指定時は `images/meta.png` へフォールバックする。
+  - `og:description` / `twitter:description` は記事タイトルと同じ文言になる。
+  - 記事追加後は `node Blog/generate_blog_pages.js` の実行が必要。
+  - テスト記事 `2026-07-26` では `Blog/source/2026-07-26/1.jpg` を指定済み。
 
 ## 次回最初にやるべき1件
 - Blog 本文の表示品質改善（`figure`, `blockquote`, 見出し, リンクの見え方調整）。

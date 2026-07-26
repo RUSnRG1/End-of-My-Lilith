@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
+        <script>
+            // ローカルとGitHub Pages、どっちでもパスがズレないようにするよ〜。
+            (function() {
+                var baseTag = document.createElement("base");
+
+                if (location.hostname === "127.0.0.1" || location.hostname === "localhost") {
+                    baseTag.href = "/";
+                } else {
+                    baseTag.href = "/End-of-My-Lilith/";
+                }
+
+                document.head.appendChild(baseTag);
+            })();
+        </script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="鈴羅木れう">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="@RUSnRG1">
+        <meta name="twitter:title" content="『春怨』の補足：モブについて">
+        <meta name="twitter:description" content="『春怨』の補足：モブについて">
+        <meta name="twitter:image" content="https://rusnrg1.github.io/End-of-My-Lilith/images/meta.png">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="『春怨』の補足：モブについて">
+        <meta property="og:description" content="『春怨』の補足：モブについて">
+        <meta property="og:image" content="https://rusnrg1.github.io/End-of-My-Lilith/images/meta.png">
+        <meta property="og:url" content="https://rusnrg1.github.io/End-of-My-Lilith/Blog/articles/2024-11-18.html">
+        <link rel="canonical" href="https://rusnrg1.github.io/End-of-My-Lilith/Blog/articles/2024-11-18.html">
+        <title>『春怨』の補足：モブについて</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+        <script src="script.js" defer></script>
+        <script src="Blog/blog_script.js"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body class="blog-page blog-detail-page">
+        <div id="container">
+            <div class="slider-placeholder"></div>
+            <div class="contentlink-placeholder"></div>
+            <main>
+                <div class="blog_contents">
+                    <div class="blog_text">
+                        <h1 id="blog-title">『春怨』の補足：モブについて</h1>
+                        <p style="text-align: right" id="blog-date">2024-11-18</p>
+                        <div class="separator"></div>
+
+                        <div id="blog-text"></div>
+                        <br>
+                        <br>
+                        <div class="blog_share">
+                            <span class="blog_share__label">SHARE / 共有</span>
+                            <a
+                                id="twitter-share"
+                                href=""
+                                target="_blank"
+                                rel="nofollow noopener noreferrer"
+                            >
+                                <img src="images/twitter.png" alt="Twitterアイコン" class="share-icon">
+                            </a>
+                            <a
+                                id="bluesky-share"
+                                href=""
+                                target="_blank"
+                                rel="nofollow noopener noreferrer"
+                            >
+                                <img src="images/bluesky.png" alt="Blueskyアイコン" class="share-icon">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="blog_description">
+                        <img src="images/About.png" alt="アイコン">
+                        <p><b>鈴羅木れう</b>
+                        <br>
+                        <font size="2">芋焼酎と紹興酒が好きです。<br><br>
+                        この下にタグ機能とか追加したいんだけどね。どう作るんだか。</font>
+                        </p>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <div class="footer-placeholder"></div>
+
+        <script>
+            marked.setOptions({
+                breaks: true,
+            });
+            loadMarkdown("Blog/source/2024-11-18/text.md");
+        </script>
+    </body>
+</html>

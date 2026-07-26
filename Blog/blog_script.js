@@ -1,18 +1,3 @@
-// ブログデータ（仮のデータ構造）
-const blogData = [
-    // 上に追加していく
-    { title: "Vernalagniaの解説", date:"2026-06-13" },
-    { title: "名義変更の巻", date:"2026-04-01" },
-    { title: "新刊解説", date:"2025-11-22" },
-    { title: "日記", date:"2025-11-01" },
-    { title: "社会人生活1年、サークル参加8回", date:"2025-03-30" },
-    { title: "冬コミ　新刊告知", date:"2024-12-21" },
-    { title: "『春怨』の補足：モブについて", date:"2024-11-18" },
-    { title: "世はまさに、大個人サイト時代！", date:"2024-11-17" },
-    { title: "社会人生活7ヵ月、サークル参加6回", date:"2024-11-08" },
-    { title: "投稿テスト", date:"2024-11-04" },
-];
-
 const blogsPerPage = 6;
 let currentPage = 1;
 
@@ -66,13 +51,12 @@ function getBlogTitle(blog) {
 }
 
 function createBlogCardHTML(blog, excerpt, hasError = false) {
-    const blogPath = `Blog/source/${blog.date}/text.md`;
     const safeTitle = escapeHtml(getBlogTitle(blog));
     const safeDate = escapeHtml(blog.date);
     const safeExcerpt = escapeHtml(excerpt);
     const readMoreHtml = hasError
         ? ""
-        : `<a class="blog-thumbnail__link" href="Blog/template.html?path=${blogPath}&title=${encodeURIComponent(getBlogTitle(blog))}&date=${blog.date}">続きを読む</a>`;
+        : `<a class="blog-thumbnail__link" href="Blog/articles/${blog.date}.html">続きを読む</a>`;
 
     return `
         <article class="blog-thumbnail">

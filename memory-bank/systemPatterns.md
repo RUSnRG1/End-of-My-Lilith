@@ -34,6 +34,15 @@
   - Cosplay: `Cosplay/Cos_Script.js`
 - Blogは「一覧生成 + 個別表示補助 + 共有リンク生成」を1ファイルで担当しているため、修正影響が比較的大きい。
 
+## Blog記事とOGPの生成パターン
+- 記事情報の正本は `Blog/blog_data.js`。
+- 記事固有サムネイルは任意の `image` で、サイトルート基準のパスを指定する。
+- `image` 未指定時は `images/meta.png` を使う。
+- X / Blueskyのクローラーへ記事固有情報を返すため、`Blog/article_template.html` から `Blog/articles/YYYY-MM-DD.html` を静的生成する。
+- 生成コマンドは `node Blog/generate_blog_pages.js`。
+- 一覧の「続きを読む」はクエリ付き `Blog/template.html` ではなく、生成済み個別HTMLへリンクする。
+- `og:description` と `twitter:description` は記事タイトルと同じ文言にする。
+
 ## 導線管理の設計上注意
 - ナビ導線が `index.html` と `html_source/content-links.html` の2箇所に存在。
 - 今後は `html_source/content-links.html` を正とし、重複定義を減らす方針が安全。

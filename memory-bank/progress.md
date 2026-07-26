@@ -16,6 +16,12 @@
   - `Blog/blog_script.js` で一覧抜粋をプレーンテキスト化し、画像・HTML混入で崩れにくくした。
   - `Blog/blog_script.js` のプレースホルダ記事 `XXXX-XX-XX` を削除。
   - `loadMarkdown()` に `await` / `response.ok` を入れて、詳細記事の読込失敗を拾えるようにした。
+- BlogのSNSカード改善を実施。
+  - 記事データを `Blog/blog_data.js` へ分離。
+  - 任意の `image` 指定と `images/meta.png` へのフォールバックを追加。
+  - `Blog/generate_blog_pages.js` で記事固有OGP入りHTMLを生成する方式へ変更。
+  - OGP / Twitter Cardの説明文を記事タイトルへ統一。
+  - `2026-07-26` のテスト記事へ `Blog/source/2026-07-26/1.jpg` を設定し、HTTP 200とメタタグを確認。
 
 ## 未着手の改善候補
 - C1: 主要ページへの `meta viewport` 統一追加
