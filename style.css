@@ -466,6 +466,16 @@ footer .social-icons img {
     margin: 10px auto; /* 枠内で中央に表示 */
 }
 
+/* YouTube埋め込みを記事の枠内に収め、画面幅に応じて伸縮させる */
+.blog_text iframe[src*="youtube.com/embed/"] {
+    display: block;
+    width: min(100%, 500px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 16px auto;
+    border: 0;
+}
+
 .blog_text pre {
     margin: 16px 0;
     padding: 14px 16px;

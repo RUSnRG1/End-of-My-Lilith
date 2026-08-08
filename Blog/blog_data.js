@@ -1,8 +1,10 @@
 // 記事はここへ追加
 // title: 記事のタイトル, date: 記事の日付(YYYY-MM-DD), image: サムネイル画像のパス(省略可)
 const blogData = [
+    { title: "変なPC買った", date: "2026-08-08", image: "Blog/source/2026-08-08/サムネ.jpg"},
     { title: "頒布していない新刊の感想が来る", date: "2026-08-02", image: "Blog/source/2026-08-02/1.jpg"},
     { title: "Vernalagniaの解説", date: "2026-06-13" },
+    { title: "お前もLaTeXで原稿を書かないか？", date: "2026-04-25" },
     { title: "名義変更の巻", date: "2026-04-01" },
     { title: "新刊解説", date: "2025-11-22" },
     { title: "日記", date: "2025-11-01" },
