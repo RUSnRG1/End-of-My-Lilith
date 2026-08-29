@@ -415,6 +415,7 @@ footer .social-icons img {
 /* Markdownに関する記述 */
 .blog_text {
     padding: 20px;
+    min-width: 0;
     color: #2ea3b2;
     border: 1px solid #355265;
     border-radius: 18px;
@@ -790,7 +791,7 @@ footer .social-icons img {
     }
 
     .blog_contents {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 16px;
     }
 
