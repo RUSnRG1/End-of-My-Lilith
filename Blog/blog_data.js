@@ -1,6 +1,7 @@
 // 記事はここへ追加
 // title: 記事のタイトル, date: 記事の日付(YYYY-MM-DD), image: サムネイル画像のパス(省略可)
 const blogData = [
+    { title: "同人再録：おひとり様女装コスプレロケ撮影遠征記", date: "2026-10-16", image: "Blog/source/2026-10-16/cos_0.jpg"},
     { title: "ワルプルギスの廻天の感想とか", date: "2026-08-30", image: "Blog/source/2026-08-30/QB.jpg" },
     { title: "変なPC買った", date: "2026-08-08", image: "Blog/source/2026-08-08/サムネ.jpg"},
     { title: "頒布していない新刊の感想が来る", date: "2026-08-02", image: "Blog/source/2026-08-02/1.jpg"},
